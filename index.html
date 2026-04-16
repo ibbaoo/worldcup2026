@@ -180,238 +180,138 @@
   .score-badge .flag { font-size: 1rem; }
 
   /* ─── GROUPS ─── */
-  .groups-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem;
-  }
-  .group-card {
-    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
-  }
+  .groups-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+  .group-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   .group-header {
     background: var(--dark3); padding: 0.75rem 1rem;
     display: flex; align-items: center; justify-content: space-between;
     border-bottom: 1px solid var(--border);
   }
-  .group-name {
-    font-family: 'Oswald', sans-serif; font-size: 1.3rem;
-    letter-spacing: 0.5px; color: var(--gold);
-  }
+  .group-name { font-family: 'Oswald', sans-serif; font-size: 1.3rem; letter-spacing: 0.5px; color: var(--gold); }
   .group-body { padding: 0.5rem; }
-  .team-row {
-    display: flex; align-items: center; gap: 0.75rem;
-    padding: 0.6rem 0.75rem; border-radius: 4px;
-    transition: background 0.15s; cursor: default;
-  }
+  .team-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.75rem; border-radius: 4px; transition: background 0.15s; cursor: default; }
   .team-row:hover { background: rgba(255,255,255,0.04); }
   .team-flag { font-size: 1.3rem; width: 28px; text-align: center; }
-  .team-name {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1rem; font-weight: 600; letter-spacing: 0; flex: 1;
-  }
+  .team-name { font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0; flex: 1; }
   .team-badge {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.3px;
-    text-transform: uppercase; color: var(--gold);
-    background: rgba(201,168,76,0.1); border: 1px solid var(--border);
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.3px;
+    text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.1); border: 1px solid var(--border);
     border-radius: 3px; padding: 0.15rem 0.4rem;
   }
 
   /* ─── PLAYERS ─── */
-  .team-selector {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
-  }
+  .team-selector { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
   .team-btn {
     background: var(--dark2); border: 1px solid var(--border); color: #D8DEEA;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
-    cursor: pointer; padding: 0.5rem 1.25rem; border-radius: 4px;
-    transition: all 0.2s;
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
+    cursor: pointer; padding: 0.5rem 1.25rem; border-radius: 4px; transition: all 0.2s;
   }
-  .team-btn:hover, .team-btn.active {
-    background: var(--gold); color: var(--dark); border-color: var(--gold);
-  }
+  .team-btn:hover, .team-btn.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
   .squad-section { margin-bottom: 2.5rem; }
   .squad-title {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
     color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;
   }
-  .players-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem;
-  }
-  .player-card {
-    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem;
-    transition: border-color 0.2s, transform 0.2s;
-    text-align: center;
-  }
+  .players-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+  .player-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; transition: transform 0.2s, border-color 0.2s;}
   .player-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .player-num {
-    font-family: 'Oswald', sans-serif; font-size: 2rem;
-    color: rgba(201,168,76,0.3); line-height: 1;
-  }
-  .player-name {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.95rem; font-weight: 700; margin-top: 0.25rem; letter-spacing: 0;
-  }
-  .player-pos {
-    font-size: 0.78rem; color: #9AAABB; margin-top: 0.2rem;
-  }
+  .player-num { font-family: 'Oswald', sans-serif; font-size: 2rem; color: rgba(201,168,76,0.3); line-height: 1; }
+  .player-name { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 700; margin-top: 0.25rem; letter-spacing: 0; }
+  .player-pos { font-size: 0.78rem; color: #9AAABB; margin-top: 0.2rem; }
   .player-club { font-size: 0.8rem; color: var(--gold); margin-top: 0.2rem; }
   .player-caps { font-size: 0.8rem; color: #9AAABB; margin-top: 0.4rem; }
 
-  /* ─── SCHEDULE ─── */
+  /* ─── SCHEDULE & COUNTRIES ─── */
   .schedule-group { margin-bottom: 3rem; }
-  .sched-group-title {
-    font-family: 'Oswald', sans-serif; font-size: 1.6rem; letter-spacing: 0.5px;
-    color: var(--gold); margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .sched-group-title::after {
-    content: ''; flex: 1; height: 1px; background: var(--border);
-  }
+  .sched-group-title { font-family: 'Oswald', sans-serif; font-size: 1.6rem; letter-spacing: 0.5px; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .sched-group-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .match-table { width: 100%; border-collapse: collapse; }
-  .match-table th {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
-    color: var(--muted); padding: 0.5rem 0.75rem; text-align: left;
-    border-bottom: 1px solid var(--border);
-  }
+  .match-table th { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
   .match-table td { padding: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .match-table tr:hover td { background: rgba(255,255,255,0.03); }
-  .match-teams {
-    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 600;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .vs { color: var(--muted); font-size: 0.8rem; }
-  .match-venue { font-size: 0.82rem; color: #9AAABB; }
-  .match-date { font-size: 0.82rem; color: #9AAABB; }
-
-  /* ─── COUNTRIES ─── */
-  .countries-filter {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
-  }
-  .filter-btn {
-    background: var(--dark2); border: 1px solid var(--border); color: #D8DEEA;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
-    cursor: pointer; padding: 0.4rem 1rem; border-radius: 3px;
-    transition: all 0.2s;
-  }
+  .match-teams { font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+  .match-venue, .match-date { font-size: 0.82rem; color: #9AAABB; }
+  .countries-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .filter-btn { background: var(--dark2); border: 1px solid var(--border); color: #D8DEEA; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 3px; cursor: pointer; transition: all 0.2s;}
   .filter-btn:hover, .filter-btn.active { background: rgba(201,168,76,0.15); color: var(--gold); border-color: var(--gold); }
-  .countries-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
-  }
-  .country-card {
-    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-    transition: border-color 0.2s, transform 0.2s; cursor: default;
-  }
+  .countries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+  .country-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column; align-items: center; text-align: center; transition: border-color 0.2s, transform 0.2s;}
   .country-card:hover { border-color: var(--gold); transform: translateY(-3px); }
   .country-flag { font-size: 3rem; margin-bottom: 0.5rem; }
-  .country-name {
-    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 700;
-  }
-  .country-conf {
-    font-size: 0.75rem; color: #9AAABB; letter-spacing: 0; margin-top: 0.2rem;
-  }
-  .country-group {
-    margin-top: 0.5rem; font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.75rem; font-weight: 700; color: var(--gold);
-    background: rgba(201,168,76,0.1); border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem; border-radius: 3px;
-  }
+  .country-name { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: 1rem; }
+  .country-conf { font-size: 0.75rem; color: #9AAABB; margin-top: 0.2rem;}
+  .country-group { margin-top: 0.5rem; font-size: 0.75rem; font-weight: 700; color: var(--gold); background: rgba(201,168,76,0.1); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 3px; }
 
   /* ─── STATS ─── */
   .conf-bars { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; }
-  .conf-bar-row { }
-  .conf-bar-label {
-    display: flex; justify-content: space-between;
-    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0;
-    margin-bottom: 0.4rem;
-  }
+  .conf-bar-label { display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 500; margin-bottom: 0.4rem; }
   .conf-bar-num { color: var(--gold); }
-  .conf-bar-track {
-    height: 8px; background: var(--dark3); border-radius: 4px; overflow: hidden;
-  }
-  .conf-bar-fill {
-    height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2));
-    border-radius: 4px;
-    animation: barGrow 1s ease both;
-    animation-delay: var(--delay);
-  }
+  .conf-bar-track { height: 8px; background: var(--dark3); border-radius: 4px; overflow: hidden; }
+  .conf-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 4px; animation: barGrow 1s ease both; animation-delay: var(--delay); }
   @keyframes barGrow { from { width: 0 !important; } }
 
-  /* ─── FOOTER ─── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem; text-align: center;
-    font-size: 0.82rem; color: #9AAABB;
-    font-family: 'Be Vietnam Pro', sans-serif; letter-spacing: 0.3px;
-  }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.82rem; color: #9AAABB; }
 
-  /* ─── RESPONSIVE ─── */
+  /* ─── IMAGE SLOTS (VIEW ONLY) ─── */
+  .img-slot, .banner-img-slot {
+    position: relative; overflow: hidden; cursor: default;
+    background: linear-gradient(135deg, var(--dark3), var(--dark2));
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+  }
+  .img-slot { width: 100%; height: 200px; border-bottom: 1px solid var(--border); }
+  .banner-img-slot { width: 100%; max-height: 400px; border-radius: 8px; margin-bottom: 2rem; min-height: 180px; }
+  
+  .img-slot img, .banner-img-slot img { 
+    width: 100%; height: 100%; object-fit: cover; display: block; 
+  }
+  
+  /* Empty State - Chưa có hình ảnh */
+  .img-placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--muted); font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 500;
+  }
+  .img-placeholder-icon { font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.3; }
+  .has-img .img-placeholder { display: none; }
+
+  /* Hover State - Xem ảnh lớn */
+  .has-img { cursor: pointer; }
+  .img-zoom-overlay {
+    position: absolute; inset: 0; background: rgba(10,12,16,0.6);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  }
+  .has-img:hover .img-zoom-overlay { opacity: 1; }
+  .img-zoom-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+  .img-zoom-text { color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; }
+
+  /* ─── LIGHTBOX MODAL ─── */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(5px);
+    display: none; align-items: center; justify-content: center;
+    padding: 2rem; opacity: 0; transition: opacity 0.3s;
+  }
+  .lightbox.show { display: flex; opacity: 1; }
+  .lightbox img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    background: none; border: none; color: #fff; font-size: 3rem; cursor: pointer;
+    line-height: 1; transition: color 0.2s;
+  }
+  .lightbox-close:hover { color: var(--gold); }
+
   @media (max-width: 600px) {
     nav { padding: 0 1rem; }
     .nav-links button { padding: 0.4rem 0.6rem; font-size: 0.75rem; }
-    .section { padding: 3rem 1rem; }
     .match-table th:nth-child(3), .match-table td:nth-child(3) { display: none; }
+    .lightbox { padding: 1rem; }
+    .lightbox-close { top: 0.5rem; right: 1rem; font-size: 2.5rem; }
   }
-
-  /* ─── SCROLLBAR ─── */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--dark); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-  /* ─── IMAGE UPLOAD SLOTS ─── */
-  .img-slot {
-    width: 100%; height: 200px; position: relative; overflow: hidden;
-    background: linear-gradient(135deg, var(--dark3), var(--dark2));
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    transition: border-color 0.2s;
-    border-bottom: 1px solid var(--border);
-  }
-  .img-slot:hover .img-overlay { opacity: 1; }
-  .img-slot img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .img-overlay {
-    position: absolute; inset: 0;
-    background: rgba(10,12,16,0.7);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.25s;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    pointer-events: none;
-  }
-  .img-slot:not(.has-img) .img-overlay { opacity: 1; }
-  .img-overlay-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
-  .img-overlay-text {
-    font-size: 0.75rem; font-weight: 600; color: var(--gold);
-    letter-spacing: 0;
-  }
-  .img-slot.loading .img-overlay { opacity: 1; }
-  .img-slot.loading .img-overlay-text::after {
-    content: '...'; animation: dots 1.2s steps(3) infinite;
-  }
-  @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
-  .banner-img-slot {
-    width: 100%; max-height: 400px; border-radius: 8px; overflow: hidden;
-    margin-bottom: 2rem; position: relative; cursor: pointer;
-    background: linear-gradient(135deg, var(--dark3), var(--dark2));
-    min-height: 180px; display: flex; align-items: center; justify-content: center;
-  }
-  .banner-img-slot img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .banner-img-slot:hover .img-overlay { opacity: 1; }
-  .banner-img-slot:not(.has-img) .img-overlay { opacity: 1; }
-  .img-delete {
-    position: absolute; top: 8px; right: 8px; z-index: 5;
-    background: rgba(215,43,43,0.85); color: #fff; border: none;
-    width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
-    font-size: 1rem; display: none; align-items: center; justify-content: center;
-    transition: background 0.2s;
-  }
-  .img-delete:hover { background: #D72B2B; }
-  .has-img:hover .img-delete { display: flex; }
 </style>
 </head>
 <body>
@@ -435,26 +335,11 @@
     <h1>WORLD<br><em>CUP</em><br>2026</h1>
     <p class="hero-sub">USA · Canada · Mexico &nbsp;|&nbsp; 11.06 — 19.07.2026</p>
     <div class="hero-meta">
-      <div class="hero-stat">
-        <div class="hero-stat-num">48</div>
-        <div class="hero-stat-label">Đội tham dự</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">104</div>
-        <div class="hero-stat-label">Trận đấu</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">16</div>
-        <div class="hero-stat-label">Thành phố</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">12</div>
-        <div class="hero-stat-label">Bảng đấu</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">Quốc gia tổ chức</div>
-      </div>
+      <div class="hero-stat"><div class="hero-stat-num">48</div><div class="hero-stat-label">Đội tham dự</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">104</div><div class="hero-stat-label">Trận đấu</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">16</div><div class="hero-stat-label">Thành phố</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">Bảng đấu</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Quốc gia tổ chức</div></div>
     </div>
     <div class="hero-cta">
       <button class="btn-primary" onclick="showPage('groups', document.querySelectorAll('.nav-links button')[1])">Xem Bảng Đấu</button>
@@ -471,9 +356,9 @@
     <div class="news-grid">
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_draw" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_draw" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Lễ Bốc Thăm</div>
@@ -483,9 +368,9 @@
       </div>
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_norway" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_norway" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Vòng Loại Châu Âu</div>
@@ -496,9 +381,9 @@
       </div>
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_portugal" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_portugal" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Bồ Đào Nha</div>
@@ -509,9 +394,9 @@
       </div>
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_croatia" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_croatia" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Croatia</div>
@@ -522,9 +407,9 @@
       </div>
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_england" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_england" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Anh Quốc</div>
@@ -535,9 +420,9 @@
       </div>
 
       <div class="news-card">
-        <div class="img-slot" data-img-key="news_france" onclick="uploadImg(this)">
-          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="img-slot" data-img-key="news_france" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
         <div class="news-body">
           <div class="news-tag">Pháp</div>
@@ -598,26 +483,29 @@
       <div class="divider"></div>
     </div>
     <div class="groups-grid" id="groups-container"></div>
+    
     <div style="margin-top:2rem">
-      <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Hình ảnh bảng đấu chính thức</div>
-      <div class="banner-img-slot" data-img-key="banner_groups" onclick="uploadImg(this)" style="min-height:240px">
-        <div class="img-overlay"><div class="img-overlay-icon">🖼️</div><div class="img-overlay-text">Nhấn để tải ảnh bảng đấu</div></div>
-        <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+      <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Hình ảnh bảng đấu chính thức</div>
+      <div class="banner-img-slot" data-img-key="banner_groups" onclick="handleImgClick(this)">
+        <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+        <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
       </div>
     </div>
+
     <div style="margin-top:1.5rem">
       <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Bảng xếp hạng vòng loại</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-        <div class="banner-img-slot" data-img-key="banner_groupf" onclick="uploadImg(this)" style="min-height:200px">
-          <div class="img-overlay"><div class="img-overlay-icon">📊</div><div class="img-overlay-text">BXH Bảng F</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="banner-img-slot" data-img-key="banner_groupf" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
-        <div class="banner-img-slot" data-img-key="banner_groupk" onclick="uploadImg(this)" style="min-height:200px">
-          <div class="img-overlay"><div class="img-overlay-icon">📊</div><div class="img-overlay-text">BXH Bảng K</div></div>
-          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        <div class="banner-img-slot" data-img-key="banner_groupk" onclick="handleImgClick(this)">
+          <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+          <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -659,10 +547,15 @@
   </div>
 </div>
 
-<input type="file" id="img-upload-input" accept="image/*" style="display:none">
+<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="Full Image" onclick="event.stopPropagation()">
+</div>
 
 <footer>
-  © 2026 FIFA World Cup Info — Dữ liệu tổng hợp từ vòng loại &amp; lễ bốc thăm chính thức
+  © 2026 FIFA World Cup Info — Dữ liệu tổng hợp từ vòng loại &amp; lễ bốc thăm chính thức<br>
+  <span style="display:inline-block; margin-top:0.5rem; font-size:0.75rem; opacity:0.7;">Trang web được thực hiện bởi nhóm 4 lớp 12A7: Phan Gia Bảo, Lý Vũ Phương, Lương Tuấn Kiệt, Thái Dịp Gia Bảo</span>
 </footer>
 
 <script>
@@ -877,7 +770,7 @@ const ALL_TEAMS = [
   {n:'Anh',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',c:'UEFA',g:'L'},{n:'Croatia',f:'🇭🇷',c:'UEFA',g:'L'},{n:'Ghana',f:'🇬🇭',c:'CAF',g:'L'},{n:'Panama',f:'🇵🇦',c:'CONCACAF',g:'L'},
 ];
 
-// ═══ RENDER GROUPS ═══
+// ═══ RENDER FUNCTIONS ═══
 function renderGroups() {
   const el = document.getElementById('groups-container');
   el.innerHTML = Object.entries(GROUPS).map(([letter, data]) => `
@@ -899,7 +792,6 @@ function renderGroups() {
   `).join('');
 }
 
-// ═══ RENDER SCHEDULE ═══
 function renderSchedule() {
   const el = document.getElementById('schedule-container');
   el.innerHTML = Object.entries(SCHEDULE).map(([group, matches]) => `
@@ -907,12 +799,7 @@ function renderSchedule() {
       <div class="sched-group-title">${group}</div>
       <table class="match-table">
         <thead>
-          <tr>
-            <th>Đội Nhà</th>
-            <th>Đội Khách</th>
-            <th>Ngày</th>
-            <th>Sân Vận Động</th>
-          </tr>
+          <tr><th>Đội Nhà</th><th>Đội Khách</th><th>Ngày</th><th>Sân Vận Động</th></tr>
         </thead>
         <tbody>
           ${matches.map(m => `
@@ -929,7 +816,6 @@ function renderSchedule() {
   `).join('');
 }
 
-// ═══ RENDER PLAYERS ═══
 function renderTeamSelector() {
   const el = document.getElementById('team-selector');
   el.innerHTML = Object.keys(SQUADS).map((t,i) => `
@@ -944,7 +830,7 @@ function selectTeam(teamKey, btn) {
   const squad = SQUADS[teamKey];
   const positions = {GK:'Thủ Môn',DEF:'Hậu Vệ',MID:'Tiền Vệ',FWD:'Tiền Đạo'};
   const slugKey = 'lineup_' + teamKey.replace(/[^a-zA-Z]/g,'').toLowerCase();
-  const firstWord = teamKey.split(' ')[0];
+  
   document.getElementById('squad-display').innerHTML = `
     <div style="margin-bottom:1.5rem;padding:1rem;background:var(--dark2);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;gap:1rem">
       <span style="font-size:3rem">${squad.flag}</span>
@@ -956,9 +842,9 @@ function selectTeam(teamKey, btn) {
 
     <div style="margin-bottom:2rem">
       <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Sơ đồ / đội hình dự kiến</div>
-      <div class="banner-img-slot" data-img-key="${slugKey}" onclick="uploadImg(this)" style="min-height:260px">
-        <div class="img-overlay"><div class="img-overlay-icon">⚽</div><div class="img-overlay-text">Tải ảnh đội hình ${firstWord}</div></div>
-        <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+      <div class="banner-img-slot" data-img-key="${slugKey}" onclick="handleImgClick(this)" style="min-height:260px">
+        <div class="img-placeholder"><div class="img-placeholder-icon">🖼️</div>Chưa có hình ảnh</div>
+        <div class="img-zoom-overlay"><div class="img-zoom-icon">🔍</div><div class="img-zoom-text">Xem full ảnh</div></div>
       </div>
     </div>
 
@@ -979,8 +865,7 @@ function selectTeam(teamKey, btn) {
       </div>
     ` : '').join('')}
   `;
-
-  // Load lineup image for this team (from cache or fetch)
+  
   const slot = document.querySelector(`[data-img-key="${slugKey}"]`);
   if (slot && window._fbImages && window._fbImages[slugKey]) {
     applyImage(slot, window._fbImages[slugKey]);
@@ -990,10 +875,8 @@ function selectTeam(teamKey, btn) {
   }
 }
 
-// ═══ RENDER COUNTRIES ═══
-function renderCountries(filter = 'TẤT CẢ') {
-  const teams = filter === 'TẤT CẢ' ? ALL_TEAMS : ALL_TEAMS.filter(t => t.c === filter);
-  document.getElementById('countries-container').innerHTML = teams.map(t => `
+function renderCountries() {
+  document.getElementById('countries-container').innerHTML = ALL_TEAMS.map(t => `
     <div class="country-card">
       <div class="country-flag">${t.f}</div>
       <div class="country-name">${t.n}</div>
@@ -1013,122 +896,87 @@ function renderConfFilter() {
 function filterConf(conf, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  renderCountries(conf);
+  const teams = conf === 'TẤT CẢ' ? ALL_TEAMS : ALL_TEAMS.filter(t => t.c === conf);
+  document.getElementById('countries-container').innerHTML = teams.map(t => `
+    <div class="country-card">
+      <div class="country-flag">${t.f}</div>
+      <div class="country-name">${t.n}</div>
+      <div class="country-conf">${t.c}</div>
+      <div class="country-group">BẢNG ${t.g}</div>
+    </div>
+  `).join('');
 }
 
-// ═══ NAVIGATION ═══
 function showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.page, .nav-links button').forEach(el => el.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   if (btn) btn.classList.add('active');
 }
 
-// ═══ FIREBASE IMAGE SYSTEM ═══
+// ═══ FIREBASE SYSTEM & LIGHTBOX HANDLING ═══
 const FB_URL = 'https://fefge-67bd3-default-rtdb.asia-southeast1.firebasedatabase.app';
-const FB_KEY = 'AIzaSyB7jCPMH4T2YJDQL4NbDw3WYTKosKLkE40';
-let activeSlot = null;
 
-function uploadImg(slotEl) {
-  activeSlot = slotEl;
-  document.getElementById('img-upload-input').click();
-}
-
-document.getElementById('img-upload-input').addEventListener('change', async function(e) {
-  const file = e.target.files[0];
-  if (!file || !activeSlot) return;
-  const key = activeSlot.dataset.imgKey;
-  activeSlot.classList.add('loading');
-
-  // Resize image to max 800px to stay under Firebase limits
-  const b64 = await resizeAndEncode(file, 800);
-  console.log(`Uploading ${key}, size: ${(b64.length/1024).toFixed(0)}KB`);
-
-  try {
-    const resp = await fetch(`${FB_URL}/worldcup2026/images/${key}.json`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(b64)
-    });
-    const body = await resp.text();
-    if (resp.ok) {
-      applyImage(activeSlot, b64);
-      console.log(`✅ Saved ${key}`);
-    } else {
-      console.error('Firebase error:', resp.status, body);
-      alert(`Lỗi ${resp.status}: ${body}\n\nHãy vào Firebase Console → Realtime Database → Rules và đặt:\n{\n  "rules": {\n    ".read": true,\n    ".write": true\n  }\n}`);
-    }
-  } catch (err) {
-    console.error('Network error:', err);
-    alert('Lỗi kết nối: ' + err.message);
-  }
-  activeSlot.classList.remove('loading');
-  this.value = '';
-});
-
-async function deleteImg(slotEl) {
-  const key = slotEl.dataset.imgKey;
-  if (!confirm('Xóa ảnh này?')) return;
-  try {
-    await fetch(`${FB_URL}/worldcup2026/images/${key}.json`, { method: 'DELETE' });
+// Xử lý Click: Chỉ mở lightbox nếu slot đã có ảnh
+function handleImgClick(slotEl) {
+  if (slotEl.classList.contains('has-img')) {
     const img = slotEl.querySelector('img');
-    if (img) img.remove();
-    slotEl.classList.remove('has-img');
-  } catch (err) {
-    alert('Lỗi: ' + err.message);
+    if (img) {
+      // Loại bỏ cấu hình canh lề để xem ảnh chuẩn kích thước gốc
+      openLightbox(img.src);
+    }
   }
 }
 
-function applyImage(slotEl, b64) {
+// Mở cửa sổ xem ảnh lớn
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = src;
+  lightbox.classList.add('show');
+}
+
+// Đóng cửa sổ xem ảnh
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('show');
+}
+
+// Áp dụng ảnh vào lưới (vẫn giữ CSS canh lề cũ nếu ảnh đã được chỉnh để không vỡ layout)
+function applyImage(slotEl, data) {
   let img = slotEl.querySelector('img');
   if (!img) {
     img = document.createElement('img');
     slotEl.insertBefore(img, slotEl.firstChild);
   }
-  img.src = b64;
+  
+  let imgData = data;
+  if (typeof data === 'string') {
+    imgData = { src: data, panX: 50, panY: 50, scale: 1 };
+  }
+  
+  img.src = imgData.src;
+  
+  // Vẫn áp dụng CSS để lưới Grid đẹp, nhưng khi bấm xem full sẽ lấy `imgData.src` nguyên bản
+  img.style.objectPosition = `${imgData.panX}% ${imgData.panY}%`;
+  img.style.transform = `scale(${imgData.scale})`;
+  
   slotEl.classList.add('has-img');
 }
 
-function resizeAndEncode(file, maxSize) {
-  return new Promise((resolve) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const img = new Image();
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        let w = img.width, h = img.height;
-        if (w > maxSize || h > maxSize) {
-          if (w > h) { h = Math.round(h * maxSize / w); w = maxSize; }
-          else { w = Math.round(w * maxSize / h); h = maxSize; }
-        }
-        canvas.width = w; canvas.height = h;
-        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-        resolve(canvas.toDataURL('image/jpeg', 0.75));
-      };
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  });
-}
-
+// Khởi tạo tải toàn bộ ảnh ban đầu
 async function loadAllImages() {
   try {
     const resp = await fetch(`${FB_URL}/worldcup2026/images.json`);
-    if (!resp.ok) {
-      console.warn('Firebase images load failed:', resp.status);
-      return;
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data) {
+        window._fbImages = data;
+        document.querySelectorAll('[data-img-key]').forEach(slot => {
+          const key = slot.dataset.imgKey;
+          if (data[key]) applyImage(slot, data[key]);
+        });
+      }
     }
-    const data = await resp.json();
-    if (!data) { console.log('No images in Firebase yet.'); return; }
-    window._fbImages = data;
-    console.log(`📷 Loaded ${Object.keys(data).length} images from Firebase`);
-    document.querySelectorAll('[data-img-key]').forEach(slot => {
-      const key = slot.dataset.imgKey;
-      if (data[key]) applyImage(slot, data[key]);
-    });
-  } catch (err) {
-    console.warn('Firebase images load failed:', err);
-  }
+  } catch (err) {}
 }
 
 // ═══ INIT ═══
@@ -1138,6 +986,11 @@ renderTeamSelector();
 renderConfFilter();
 renderCountries();
 loadAllImages();
+
+// Bắt sự kiện phím Esc để đóng ảnh
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
 </script>
 </body>
 </html>
