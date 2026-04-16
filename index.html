@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFA World Cup 2026 — Thông Tin Giải Đấu</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold2: #F5D680;
+    --red: #D72B2B;
+    --dark: #0A0C10;
+    --dark2: #12161E;
+    --dark3: #1C2230;
+    --border: rgba(201,168,76,0.25);
+    --text: #E8EAF0;
+    --muted: #9AAABB;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,12,16,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem; letter-spacing: 0.5px;
+    color: var(--gold);
+  }
+  .nav-logo span { color: #fff; }
+  .nav-links { display: flex; gap: 0.2rem; }
+  .nav-links button {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.3px;
+    color: #D8DEEA; text-transform: uppercase;
+    padding: 0.5rem 1rem; border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links button:hover, .nav-links button.active {
+    color: var(--gold); background: rgba(201,168,76,0.12);
+  }
+
+  /* ─── PAGES ─── */
+  .page { display: none; animation: fadeIn 0.4s ease; }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: 88vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 4rem 2rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.10) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,0.04) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,0.04) 80px),
+      var(--dark);
+  }
+  .hero-badge {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3px;
+    text-transform: uppercase; color: var(--gold);
+    border: 1px solid var(--border); padding: 0.4rem 1.2rem; border-radius: 20px;
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.9; letter-spacing: 0.5px;
+    position: relative; z-index: 1;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: #9AAABB;
+    margin-top: 0.5rem; position: relative; z-index: 1;
+  }
+  .hero-meta {
+    margin-top: 2.5rem;
+    display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .hero-stat {
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 1rem 2rem;
+  }
+  .hero-stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem; color: var(--gold); line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted);
+  }
+  .hero-cta {
+    margin-top: 2rem; position: relative; z-index: 1;
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--dark);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    border: none; cursor: pointer; padding: 0.8rem 2rem; border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+  .btn-outline {
+    background: none; color: var(--gold);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    border: 1px solid var(--gold); cursor: pointer; padding: 0.8rem 2rem; border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .btn-outline:hover { background: rgba(201,168,76,0.1); }
+
+  /* ─── SECTION ─── */
+  .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+  .section-header { margin-bottom: 3rem; }
+  .section-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.5px; line-height: 1;
+  }
+  .section-title span { color: var(--gold); }
+  .divider { width: 60px; height: 3px; background: var(--gold); margin-top: 1rem; }
+
+  /* ─── NEWS CARDS ─── */
+  .news-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;
+  }
+  .news-card {
+    background: var(--dark2);
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .news-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .news-body { padding: 1.25rem; }
+  .news-tag {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .news-title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.5rem;
+  }
+  .news-desc { font-size: 0.88rem; color: #B8C4D0; line-height: 1.75; font-weight: 400; }
+  .score-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(215,43,43,0.15); border: 1px solid rgba(215,43,43,0.3);
+    border-radius: 4px; padding: 0.3rem 0.75rem; margin-top: 0.75rem;
+    font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: #fff;
+  }
+  .score-badge .flag { font-size: 1rem; }
+
+  /* ─── GROUPS ─── */
+  .groups-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem;
+  }
+  .group-card {
+    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  .group-header {
+    background: var(--dark3); padding: 0.75rem 1rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .group-name {
+    font-family: 'Oswald', sans-serif; font-size: 1.3rem;
+    letter-spacing: 0.5px; color: var(--gold);
+  }
+  .group-body { padding: 0.5rem; }
+  .team-row {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.6rem 0.75rem; border-radius: 4px;
+    transition: background 0.15s; cursor: default;
+  }
+  .team-row:hover { background: rgba(255,255,255,0.04); }
+  .team-flag { font-size: 1.3rem; width: 28px; text-align: center; }
+  .team-name {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem; font-weight: 600; letter-spacing: 0; flex: 1;
+  }
+  .team-badge {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.3px;
+    text-transform: uppercase; color: var(--gold);
+    background: rgba(201,168,76,0.1); border: 1px solid var(--border);
+    border-radius: 3px; padding: 0.15rem 0.4rem;
+  }
+
+  /* ─── PLAYERS ─── */
+  .team-selector {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
+  }
+  .team-btn {
+    background: var(--dark2); border: 1px solid var(--border); color: #D8DEEA;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
+    cursor: pointer; padding: 0.5rem 1.25rem; border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .team-btn:hover, .team-btn.active {
+    background: var(--gold); color: var(--dark); border-color: var(--gold);
+  }
+  .squad-section { margin-bottom: 2.5rem; }
+  .squad-title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem;
+  }
+  .players-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem;
+  }
+  .player-card {
+    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+    text-align: center;
+  }
+  .player-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .player-num {
+    font-family: 'Oswald', sans-serif; font-size: 2rem;
+    color: rgba(201,168,76,0.3); line-height: 1;
+  }
+  .player-name {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.95rem; font-weight: 700; margin-top: 0.25rem; letter-spacing: 0;
+  }
+  .player-pos {
+    font-size: 0.78rem; color: #9AAABB; margin-top: 0.2rem;
+  }
+  .player-club { font-size: 0.8rem; color: var(--gold); margin-top: 0.2rem; }
+  .player-caps { font-size: 0.8rem; color: #9AAABB; margin-top: 0.4rem; }
+
+  /* ─── SCHEDULE ─── */
+  .schedule-group { margin-bottom: 3rem; }
+  .sched-group-title {
+    font-family: 'Oswald', sans-serif; font-size: 1.6rem; letter-spacing: 0.5px;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .sched-group-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .match-table { width: 100%; border-collapse: collapse; }
+  .match-table th {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--muted); padding: 0.5rem 0.75rem; text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .match-table td { padding: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .match-table tr:hover td { background: rgba(255,255,255,0.03); }
+  .match-teams {
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .vs { color: var(--muted); font-size: 0.8rem; }
+  .match-venue { font-size: 0.82rem; color: #9AAABB; }
+  .match-date { font-size: 0.82rem; color: #9AAABB; }
+
+  /* ─── COUNTRIES ─── */
+  .countries-filter {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
+  }
+  .filter-btn {
+    background: var(--dark2); border: 1px solid var(--border); color: #D8DEEA;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;
+    cursor: pointer; padding: 0.4rem 1rem; border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active { background: rgba(201,168,76,0.15); color: var(--gold); border-color: var(--gold); }
+  .countries-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
+  }
+  .country-card {
+    background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    transition: border-color 0.2s, transform 0.2s; cursor: default;
+  }
+  .country-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .country-flag { font-size: 3rem; margin-bottom: 0.5rem; }
+  .country-name {
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 700;
+  }
+  .country-conf {
+    font-size: 0.75rem; color: #9AAABB; letter-spacing: 0; margin-top: 0.2rem;
+  }
+  .country-group {
+    margin-top: 0.5rem; font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem; font-weight: 700; color: var(--gold);
+    background: rgba(201,168,76,0.1); border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem; border-radius: 3px;
+  }
+
+  /* ─── STATS ─── */
+  .conf-bars { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; }
+  .conf-bar-row { }
+  .conf-bar-label {
+    display: flex; justify-content: space-between;
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0;
+    margin-bottom: 0.4rem;
+  }
+  .conf-bar-num { color: var(--gold); }
+  .conf-bar-track {
+    height: 8px; background: var(--dark3); border-radius: 4px; overflow: hidden;
+  }
+  .conf-bar-fill {
+    height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2));
+    border-radius: 4px;
+    animation: barGrow 1s ease both;
+    animation-delay: var(--delay);
+  }
+  @keyframes barGrow { from { width: 0 !important; } }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem; text-align: center;
+    font-size: 0.82rem; color: #9AAABB;
+    font-family: 'Be Vietnam Pro', sans-serif; letter-spacing: 0.3px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; }
+    .nav-links button { padding: 0.4rem 0.6rem; font-size: 0.75rem; }
+    .section { padding: 3rem 1rem; }
+    .match-table th:nth-child(3), .match-table td:nth-child(3) { display: none; }
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ─── IMAGE UPLOAD SLOTS ─── */
+  .img-slot {
+    width: 100%; height: 200px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--dark3), var(--dark2));
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s;
+    border-bottom: 1px solid var(--border);
+  }
+  .img-slot:hover .img-overlay { opacity: 1; }
+  .img-slot img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .img-overlay {
+    position: absolute; inset: 0;
+    background: rgba(10,12,16,0.7);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.25s;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    pointer-events: none;
+  }
+  .img-slot:not(.has-img) .img-overlay { opacity: 1; }
+  .img-overlay-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .img-overlay-text {
+    font-size: 0.75rem; font-weight: 600; color: var(--gold);
+    letter-spacing: 0;
+  }
+  .img-slot.loading .img-overlay { opacity: 1; }
+  .img-slot.loading .img-overlay-text::after {
+    content: '...'; animation: dots 1.2s steps(3) infinite;
+  }
+  @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
+  .banner-img-slot {
+    width: 100%; max-height: 400px; border-radius: 8px; overflow: hidden;
+    margin-bottom: 2rem; position: relative; cursor: pointer;
+    background: linear-gradient(135deg, var(--dark3), var(--dark2));
+    min-height: 180px; display: flex; align-items: center; justify-content: center;
+  }
+  .banner-img-slot img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .banner-img-slot:hover .img-overlay { opacity: 1; }
+  .banner-img-slot:not(.has-img) .img-overlay { opacity: 1; }
+  .img-delete {
+    position: absolute; top: 8px; right: 8px; z-index: 5;
+    background: rgba(215,43,43,0.85); color: #fff; border: none;
+    width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+    font-size: 1rem; display: none; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .img-delete:hover { background: #D72B2B; }
+  .has-img:hover .img-delete { display: flex; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">WORLD<span>CUP</span> <span style="color:var(--gold)">2026</span></div>
+  <div class="nav-links">
+    <button class="active" onclick="showPage('home', this)">Trang Chủ</button>
+    <button onclick="showPage('groups', this)">Bảng Đấu</button>
+    <button onclick="showPage('schedule', this)">Lịch Đấu</button>
+    <button onclick="showPage('players', this)">Cầu Thủ</button>
+    <button onclick="showPage('countries', this)">Các Đội</button>
+  </div>
+</nav>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-badge">⚽ FIFA World Cup 2026 — Chính Thức</div>
+    <h1>WORLD<br><em>CUP</em><br>2026</h1>
+    <p class="hero-sub">USA · Canada · Mexico &nbsp;|&nbsp; 11.06 — 19.07.2026</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-num">48</div>
+        <div class="hero-stat-label">Đội tham dự</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">104</div>
+        <div class="hero-stat-label">Trận đấu</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">16</div>
+        <div class="hero-stat-label">Thành phố</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">Bảng đấu</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Quốc gia tổ chức</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="showPage('groups', document.querySelectorAll('.nav-links button')[1])">Xem Bảng Đấu</button>
+      <button class="btn-outline" onclick="showPage('schedule', document.querySelectorAll('.nav-links button')[2])">Lịch Thi Đấu</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">Tin tức mới nhất</div>
+      <h2 class="section-title">Điểm Nổi Bật <span>Vòng Loại</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_draw" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Lễ Bốc Thăm</div>
+          <div class="news-title">Bốc Thăm Chia Bảng World Cup 2026 tại Washington D.C.</div>
+          <div class="news-desc">Lễ bốc thăm diễn ra tại Trung tâm Kennedy ngày 6/12/2025 với sự hiện diện của Tổng thống Donald Trump, tạo ra 12 bảng đấu với 48 quốc gia tham dự.</div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_norway" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Vòng Loại Châu Âu</div>
+          <div class="news-title">Na Uy Nghiền Nát Ý 4–1, Haaland Tỏa Sáng</div>
+          <div class="news-desc">Erling Haaland ghi cú đúp vào phút 78 và 79, cùng Nusa và Strand Larsen đưa Na Uy đến World Cup 2026 một cách thuyết phục.</div>
+          <div class="score-badge"><span class="flag">🇮🇹</span> 1 – 4 <span class="flag">🇳🇴</span></div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_portugal" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Bồ Đào Nha</div>
+          <div class="news-title">Bồ Đào Nha Hủy Diệt Armenia 9–1, Giành Vé Thứ 31</div>
+          <div class="news-desc">Không có Ronaldo nhưng "Selecao" vẫn áp đảo toàn diện. R. Veiga, G. Ramos, J. Neves (x2), B. Fernandes dẫn đầu bảng F với 13 điểm.</div>
+          <div class="score-badge"><span class="flag">🇵🇹</span> 9 – 1 <span class="flag">🇦🇲</span></div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_croatia" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Croatia</div>
+          <div class="news-title">Croatia 3–1 Faroe Islands, Chính Thức Có Mặt World Cup</div>
+          <div class="news-desc">Gvardiol, Musa, Vlasic tỏa sáng giúp Croatia vượt qua Faroe Islands trong trận đầy cảm xúc, đoàn quân áo kẻ ca-rô lại lần nữa góp mặt ở sân chơi lớn nhất.</div>
+          <div class="score-badge"><span class="flag">🇭🇷</span> 3 – 1 <span class="flag">🇫🇴</span></div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_england" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Anh Quốc</div>
+          <div class="news-title">Anh Thống Trị Bảng K — 24 Điểm, Hiệu Số +22</div>
+          <div class="news-desc">Albania 0–2 Anh: "Tam sư" toàn thắng 8 trận vòng loại, hiệu số bàn thắng 22:0. Croatia xếp thứ 2 bảng L sau khi giành vé trực tiếp.</div>
+          <div class="score-badge"><span class="flag">🇦🇱</span> 0 – 2 <span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span></div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="img-slot" data-img-key="news_france" onclick="uploadImg(this)">
+          <div class="img-overlay"><div class="img-overlay-icon">📸</div><div class="img-overlay-text">Nhấn để tải ảnh lên</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="news-body">
+          <div class="news-tag">Pháp</div>
+          <div class="news-title">Pháp Lật Ngược Tình Thế Trước Azerbaijan Dù Thiếu Mbappe</div>
+          <div class="news-desc">Azerbaijan bất ngờ dẫn trước ở phút thứ 3 nhưng Les Bleus đã bình tĩnh vượt khó, giành chiến thắng 3–1 để khẳng định vị thế ứng viên vô địch.</div>
+          <div class="score-badge"><span class="flag">🇫🇷</span> 3 – 1 <span class="flag">🇦🇿</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" style="border-top:1px solid var(--border)">
+    <div class="section-header">
+      <div class="section-label">Phân bổ suất dự</div>
+      <h2 class="section-title">Suất Dự <span>Theo Châu Lục</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="conf-bars">
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ UEFA — Châu Âu</span><span class="conf-bar-num">16 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:66.7%;--delay:0.1s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ CAF — Châu Phi</span><span class="conf-bar-num">9 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:37.5%;--delay:0.2s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ AFC — Châu Á</span><span class="conf-bar-num">8 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:33.3%;--delay:0.3s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ CONCACAF — Bắc Trung Mỹ</span><span class="conf-bar-num">6 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:25%;--delay:0.4s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ CONMEBOL — Nam Mỹ</span><span class="conf-bar-num">6 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:25%;--delay:0.5s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ Play-off Liên Lục Địa</span><span class="conf-bar-num">2 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:8.3%;--delay:0.6s"></div></div>
+      </div>
+      <div class="conf-bar-row">
+        <div class="conf-bar-label"><span>⚽ OFC — Châu Đại Dương</span><span class="conf-bar-num">1 suất</span></div>
+        <div class="conf-bar-track"><div class="conf-bar-fill" style="width:4.2%;--delay:0.7s"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ GROUPS ═══════════ -->
+<div class="page" id="page-groups">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">FIFA World Cup 2026</div>
+      <h2 class="section-title">Bảng <span>Đấu</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="groups-grid" id="groups-container"></div>
+    <div style="margin-top:2rem">
+      <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Hình ảnh bảng đấu chính thức</div>
+      <div class="banner-img-slot" data-img-key="banner_groups" onclick="uploadImg(this)" style="min-height:240px">
+        <div class="img-overlay"><div class="img-overlay-icon">🖼️</div><div class="img-overlay-text">Nhấn để tải ảnh bảng đấu</div></div>
+        <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem">
+      <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Bảng xếp hạng vòng loại</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="banner-img-slot" data-img-key="banner_groupf" onclick="uploadImg(this)" style="min-height:200px">
+          <div class="img-overlay"><div class="img-overlay-icon">📊</div><div class="img-overlay-text">BXH Bảng F</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+        <div class="banner-img-slot" data-img-key="banner_groupk" onclick="uploadImg(this)" style="min-height:200px">
+          <div class="img-overlay"><div class="img-overlay-icon">📊</div><div class="img-overlay-text">BXH Bảng K</div></div>
+          <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCHEDULE ═══════════ -->
+<div class="page" id="page-schedule">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">FIFA World Cup 2026</div>
+      <h2 class="section-title">Lịch <span>Thi Đấu</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div id="schedule-container"></div>
+  </div>
+</div>
+
+<!-- ═══════════ PLAYERS ═══════════ -->
+<div class="page" id="page-players">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">Đội hình dự kiến</div>
+      <h2 class="section-title">Cầu Thủ <span>Tiêu Biểu</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="team-selector" id="team-selector"></div>
+    <div id="squad-display"></div>
+  </div>
+</div>
+
+<!-- ═══════════ COUNTRIES ═══════════ -->
+<div class="page" id="page-countries">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">48 Quốc gia</div>
+      <h2 class="section-title">Các Đội <span>Tham Dự</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="countries-filter" id="conf-filter"></div>
+    <div class="countries-grid" id="countries-container"></div>
+  </div>
+</div>
+
+<input type="file" id="img-upload-input" accept="image/*" style="display:none">
+
+<footer>
+  © 2026 FIFA World Cup Info — Dữ liệu tổng hợp từ vòng loại &amp; lễ bốc thăm chính thức
+</footer>
+
+<script>
+// ═══ DATA ═══
+const GROUPS = {
+  A: { teams: [{n:'Mexico',f:'🇲🇽',c:'CONCACAF'},{n:'Nam Phi',f:'🇿🇦',c:'CAF'},{n:'Hàn Quốc',f:'🇰🇷',c:'AFC'},{n:'Play-off UEFA D',f:'🏆',c:'UEFA Play-off'}] },
+  B: { teams: [{n:'Canada',f:'🇨🇦',c:'CONCACAF'},{n:'Qatar',f:'🇶🇦',c:'AFC'},{n:'Thụy Sĩ',f:'🇨🇭',c:'UEFA'},{n:'Play-off UEFA A',f:'🏆',c:'UEFA Play-off'}] },
+  C: { teams: [{n:'Brazil',f:'🇧🇷',c:'CONMEBOL'},{n:'Maroc',f:'🇲🇦',c:'CAF'},{n:'Haiti',f:'🇭🇹',c:'CONCACAF'},{n:'Scotland',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',c:'UEFA'}] },
+  D: { teams: [{n:'Mỹ',f:'🇺🇸',c:'CONCACAF'},{n:'Paraguay',f:'🇵🇾',c:'CONMEBOL'},{n:'Australia',f:'🇦🇺',c:'AFC'},{n:'Play-off UEFA C',f:'🏆',c:'UEFA Play-off'}] },
+  E: { teams: [{n:'Đức',f:'🇩🇪',c:'UEFA'},{n:'Curacao',f:'🏝️',c:'CONCACAF'},{n:"Côte d'Ivoire",f:'🇨🇮',c:'CAF'},{n:'Ecuador',f:'🇪🇨',c:'CONMEBOL'}] },
+  F: { teams: [{n:'Hà Lan',f:'🇳🇱',c:'UEFA'},{n:'Nhật Bản',f:'🇯🇵',c:'AFC'},{n:'Tunisia',f:'🇹🇳',c:'CAF'},{n:'Play-off UEFA B',f:'🏆',c:'UEFA Play-off'}] },
+  G: { teams: [{n:'Bỉ',f:'🇧🇪',c:'UEFA'},{n:'Ai Cập',f:'🇪🇬',c:'CAF'},{n:'Iran',f:'🇮🇷',c:'AFC'},{n:'New Zealand',f:'🇳🇿',c:'OFC'}] },
+  H: { teams: [{n:'Tây Ban Nha',f:'🇪🇸',c:'UEFA'},{n:'Cape Verde',f:'🇨🇻',c:'CAF'},{n:'Saudi Arabia',f:'🇸🇦',c:'AFC'},{n:'Uruguay',f:'🇺🇾',c:'CONMEBOL'}] },
+  I: { teams: [{n:'Pháp',f:'🇫🇷',c:'UEFA'},{n:'Senegal',f:'🇸🇳',c:'CAF'},{n:'Na Uy',f:'🇳🇴',c:'UEFA'},{n:'Play-off FIFA 2',f:'🏆',c:'Interconfederation'}] },
+  J: { teams: [{n:'Argentina',f:'🇦🇷',c:'CONMEBOL'},{n:'Algeria',f:'🇩🇿',c:'CAF'},{n:'Áo',f:'🇦🇹',c:'UEFA'},{n:'Jordan',f:'🇯🇴',c:'AFC'}] },
+  K: { teams: [{n:'Bồ Đào Nha',f:'🇵🇹',c:'UEFA'},{n:'Uzbekistan',f:'🇺🇿',c:'AFC'},{n:'Colombia',f:'🇨🇴',c:'CONMEBOL'},{n:'Play-off FIFA 1',f:'🏆',c:'Interconfederation'}] },
+  L: { teams: [{n:'Anh',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',c:'UEFA'},{n:'Croatia',f:'🇭🇷',c:'UEFA'},{n:'Ghana',f:'🇬🇭',c:'CAF'},{n:'Panama',f:'🇵🇦',c:'CONCACAF'}] },
+};
+
+const SCHEDULE = {
+  'Bảng A': [
+    {home:'Mexico 🇲🇽',away:'🇿🇦 Nam Phi',date:'12/06/2026',venue:'SoFi Stadium, Los Angeles'},
+    {home:'Hàn Quốc 🇰🇷',away:'🏆 Play-off D',date:'12/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Mexico 🇲🇽',away:'🇰🇷 Hàn Quốc',date:'16/06/2026',venue:'AT&T Stadium, Dallas'},
+    {home:'Nam Phi 🇿🇦',away:'🏆 Play-off D',date:'17/06/2026',venue:'Rose Bowl, Los Angeles'},
+    {home:'Mexico 🇲🇽',away:'🏆 Play-off D',date:'21/06/2026',venue:'Estadio Azteca, Mexico City'},
+    {home:'Hàn Quốc 🇰🇷',away:'🇿🇦 Nam Phi',date:'21/06/2026',venue:'BC Place, Vancouver'},
+  ],
+  'Bảng C': [
+    {home:'Brazil 🇧🇷',away:'🇲🇦 Maroc',date:'13/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Haiti 🇭🇹',away:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland',date:'13/06/2026',venue:'Levi\'s Stadium, San Francisco'},
+    {home:'Brazil 🇧🇷',away:'🇭🇹 Haiti',date:'17/06/2026',venue:'Hard Rock Stadium, Miami'},
+    {home:'Maroc 🇲🇦',away:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland',date:'18/06/2026',venue:'Gillette Stadium, Boston'},
+    {home:'Brazil 🇧🇷',away:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland',date:'22/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Maroc 🇲🇦',away:'🇭🇹 Haiti',date:'22/06/2026',venue:'SoFi Stadium, Los Angeles'},
+  ],
+  'Bảng I': [
+    {home:'Pháp 🇫🇷',away:'🇸🇳 Senegal',date:'14/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Na Uy 🇳🇴',away:'🏆 Play-off 2',date:'14/06/2026',venue:'Hard Rock Stadium, Miami'},
+    {home:'Pháp 🇫🇷',away:'🇳🇴 Na Uy',date:'18/06/2026',venue:'Levi\'s Stadium, San Francisco'},
+    {home:'Senegal 🇸🇳',away:'🏆 Play-off 2',date:'19/06/2026',venue:'AT&T Stadium, Dallas'},
+    {home:'Pháp 🇫🇷',away:'🏆 Play-off 2',date:'24/06/2026',venue:'Rose Bowl, Los Angeles'},
+    {home:'Na Uy 🇳🇴',away:'🇸🇳 Senegal',date:'24/06/2026',venue:'Estadio BBVA, Monterrey'},
+  ],
+  'Bảng J': [
+    {home:'Argentina 🇦🇷',away:'🇩🇿 Algeria',date:'14/06/2026',venue:'Hard Rock, Miami'},
+    {home:'Áo 🇦🇹',away:'🇯🇴 Jordan',date:'15/06/2026',venue:'Arrowhead Stadium, Kansas City'},
+    {home:'Argentina 🇦🇷',away:'🇦🇹 Áo',date:'19/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Algeria 🇩🇿',away:'🇯🇴 Jordan',date:'19/06/2026',venue:'NRG Stadium, Houston'},
+    {home:'Argentina 🇦🇷',away:'🇯🇴 Jordan',date:'23/06/2026',venue:'Rose Bowl, Los Angeles'},
+    {home:'Algeria 🇩🇿',away:'🇦🇹 Áo',date:'23/06/2026',venue:'Mercedes-Benz Stadium, Atlanta'},
+  ],
+  'Bảng K': [
+    {home:'Bồ Đào Nha 🇵🇹',away:'🇺🇿 Uzbekistan',date:'15/06/2026',venue:'Levi\'s Stadium, San Francisco'},
+    {home:'Colombia 🇨🇴',away:'🏆 Play-off 1',date:'15/06/2026',venue:'Gillette Stadium, Boston'},
+    {home:'Bồ Đào Nha 🇵🇹',away:'🇨🇴 Colombia',date:'20/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Uzbekistan 🇺🇿',away:'🏆 Play-off 1',date:'20/06/2026',venue:'NRG Stadium, Houston'},
+    {home:'Bồ Đào Nha 🇵🇹',away:'🏆 Play-off 1',date:'25/06/2026',venue:'Hard Rock, Miami'},
+    {home:'Colombia 🇨🇴',away:'🇺🇿 Uzbekistan',date:'25/06/2026',venue:'SoFi Stadium, Los Angeles'},
+  ],
+  'Bảng L': [
+    {home:'Anh 🏴󠁧󠁢󠁥󠁮󠁧󠁿',away:'🇭🇷 Croatia',date:'16/06/2026',venue:'MetLife, New Jersey'},
+    {home:'Ghana 🇬🇭',away:'🇵🇦 Panama',date:'16/06/2026',venue:'AT&T Stadium, Dallas'},
+    {home:'Anh 🏴󠁧󠁢󠁥󠁮󠁧󠁿',away:'🇬🇭 Ghana',date:'21/06/2026',venue:'Rose Bowl, Los Angeles'},
+    {home:'Croatia 🇭🇷',away:'🇵🇦 Panama',date:'21/06/2026',venue:'Estadio BBVA, Monterrey'},
+    {home:'Anh 🏴󠁧󠁢󠁥󠁮󠁧󠁿',away:'🇵🇦 Panama',date:'25/06/2026',venue:'SoFi Stadium, Los Angeles'},
+    {home:'Croatia 🇭🇷',away:'🇬🇭 Ghana',date:'25/06/2026',venue:'Levi\'s Stadium, San Francisco'},
+  ],
+};
+
+const SQUADS = {
+  'Norway 🇳🇴': {
+    flag: '🇳🇴', group: 'I',
+    GK: [{num:1,name:'Ørjan Nyland',club:'Brann',caps:49},{num:12,name:'Kristoffer Klaesson',club:'Leeds Utd',caps:4}],
+    DEF: [{num:2,name:'Kristian Thorstvedt',club:'Sassuolo',caps:35},{num:5,name:'Leo Østigård',club:'Napoli',caps:38},{num:6,name:'Andreas Hanche-Olsen',club:'Genk',caps:22},{num:3,name:'Fredrik Bjørkan',club:'Heerenveen',caps:18},{num:22,name:'Stian Gregersen',club:'Southampton',caps:10}],
+    MID: [{num:8,name:'Sander Berge',club:'Burnley',caps:68},{num:10,name:'Martin Ødegaard',club:'Arsenal',caps:103},{num:14,name:'Morten Thorsby',club:'Genoa',caps:42},{num:17,name:'Fredrik Aursnes',club:'Benfica',caps:51},{num:7,name:'Andreas Ulmer',club:'Man City',caps:8}],
+    FWD: [{num:9,name:'Erling Haaland',club:'Man City',caps:37},{num:11,name:'Antonio Nusa',club:'Leipzig',caps:28},{num:19,name:'Jørgen Strand Larsen',club:'Wolves',caps:30},{num:20,name:'Ole Sæter',club:'CSKA Moscow',caps:5}],
+  },
+  'Portugal 🇵🇹': {
+    flag: '🇵🇹', group: 'K',
+    GK: [{num:1,name:'Rui Patrício',club:'Roma',caps:113},{num:12,name:'Diogo Costa',club:'FC Porto',caps:22}],
+    DEF: [{num:2,name:'João Cancelo',club:'Barcelona',caps:68},{num:5,name:'Rúben Dias',club:'Man City',caps:74},{num:3,name:'Nuno Mendes',club:'PSG',caps:40},{num:6,name:'Danilo Pereira',club:'PSG',caps:60},{num:13,name:'Renato Veiga',club:'Chelsea',caps:15}],
+    MID: [{num:8,name:'João Palhinha',club:'Bayern Munich',caps:42},{num:10,name:'Bernardo Silva',club:'Man City',caps:92},{num:16,name:'Vitinha',club:'PSG',caps:29},{num:15,name:'João Neves',club:'PSG',caps:18},{num:18,name:'Bruno Fernandes',club:'Man Utd',caps:88}],
+    FWD: [{num:9,name:'Gonçalo Ramos',club:'PSG',caps:28},{num:7,name:'Pedro Neto',club:'Chelsea',caps:24},{num:11,name:'Rafael Leão',club:'AC Milan',caps:44},{num:17,name:'Francisco Conceição',club:'Juventus',caps:15}],
+  },
+  'France 🇫🇷': {
+    flag: '🇫🇷', group: 'I',
+    GK: [{num:1,name:'Mike Maignan',club:'AC Milan',caps:32},{num:16,name:'Brice Samba',club:'RC Lens',caps:11}],
+    DEF: [{num:5,name:'Jules Koundé',club:'Barcelona',caps:52},{num:4,name:'Dayot Upamecano',club:'Bayern Munich',caps:44},{num:3,name:'Theo Hernández',club:'AC Milan',caps:34},{num:22,name:'William Saliba',club:'Arsenal',caps:20},{num:2,name:'Benjamin Pavard',club:'Inter Milan',caps:60}],
+    MID: [{num:8,name:'Aurélien Tchouaméni',club:'Real Madrid',caps:42},{num:14,name:'Adrien Rabiot',club:'Marseille',caps:55},{num:6,name:'Eduardo Camavinga',club:'Real Madrid',caps:28},{num:7,name:'Antoine Griezmann',club:'Atlético Madrid',caps:132}],
+    FWD: [{num:9,name:'Olivier Giroud',club:'LAFC',caps:137},{num:11,name:'Ousmane Dembélé',club:'PSG',caps:50},{num:10,name:'Kylian Mbappé',club:'Real Madrid',caps:85},{num:13,name:'Marcus Thuram',club:'Inter Milan',caps:40}],
+  },
+  'Argentina 🇦🇷': {
+    flag: '🇦🇷', group: 'J',
+    GK: [{num:1,name:"Emiliano Martínez",club:'Aston Villa',caps:42}],
+    DEF: [{num:26,name:'Nahuel Molina',club:'Atlético Madrid',caps:40},{num:13,name:'Cristian Romero',club:'Tottenham',caps:38},{num:25,name:'Lisandro Martínez',club:'Man Utd',caps:31},{num:3,name:'Nicolás Tagliafico',club:'Lyon',caps:68}],
+    MID: [{num:5,name:'Leandro Paredes',club:'Roma',caps:78},{num:7,name:'Rodrigo De Paul',club:'Atlético Madrid',caps:78},{num:11,name:'Ángel Di María',club:'Benfica',caps:144},{num:20,name:'Alexis Mac Allister',club:'Liverpool',caps:30}],
+    FWD: [{num:10,name:'Lionel Messi',club:'Inter Miami',caps:191},{num:9,name:'Julián Álvarez',club:'Atlético Madrid',caps:44},{num:22,name:'Lautaro Martínez',club:'Inter Milan',caps:64},{num:8,name:'Enzo Fernández',club:'Chelsea',caps:37}],
+  },
+  'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿': {
+    flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', group: 'L',
+    GK: [{num:1,name:'Jordan Pickford',club:'Everton',caps:71},{num:13,name:'Dean Henderson',club:'Crystal Palace',caps:4}],
+    DEF: [{num:2,name:'Kyle Walker',club:'Man City',caps:84},{num:5,name:'John Stones',club:'Man City',caps:75},{num:6,name:'Harry Maguire',club:'Man Utd',caps:65},{num:3,name:'Luke Shaw',club:'Man Utd',caps:42},{num:12,name:'Reece James',club:'Chelsea',caps:25}],
+    MID: [{num:4,name:'Declan Rice',club:'Arsenal',caps:56},{num:8,name:'Jordan Henderson',club:'Ajax',caps:81},{num:10,name:'Jude Bellingham',club:'Real Madrid',caps:44},{num:7,name:'Jack Grealish',club:'Man City',caps:38}],
+    FWD: [{num:9,name:'Harry Kane',club:'Bayern Munich',caps:97},{num:11,name:'Bukayo Saka',club:'Arsenal',caps:48},{num:20,name:'Phil Foden',club:'Man City',caps:40},{num:19,name:'Ollie Watkins',club:'Aston Villa',caps:22}],
+  },
+  'Brazil 🇧🇷': {
+    flag: '🇧🇷', group: 'C',
+    GK: [{num:1,name:'Ederson',club:'Man City',caps:36},{num:23,name:'Alisson',club:'Liverpool',caps:71}],
+    DEF: [{num:2,name:'Danilo',club:'Flamengo',caps:76},{num:3,name:'Guilherme Arana',club:'Atlético Mineiro',caps:24},{num:4,name:'Marquinhos',club:'PSG',caps:88},{num:14,name:'Eder Militão',club:'Real Madrid',caps:34}],
+    MID: [{num:5,name:'Casemiro',club:'Man Utd',caps:82},{num:8,name:'Fred',club:'Man Utd',caps:42},{num:7,name:'Lucas Paquetá',club:'West Ham',caps:59},{num:10,name:'Neymar',club:'Al Hilal',caps:128}],
+    FWD: [{num:9,name:'Richarlison',club:'Tottenham',caps:53},{num:11,name:'Raphinha',club:'Barcelona',caps:41},{num:20,name:'Rodrygo',club:'Real Madrid',caps:29},{num:21,name:'Vinícius Jr',club:'Real Madrid',caps:44}],
+  },
+  'Spain 🇪🇸': {
+    flag: '🇪🇸', group: 'H',
+    GK: [{num:1,name:'Unai Simón',club:'Athletic Bilbao',caps:43},{num:23,name:'David Raya',club:'Arsenal',caps:10}],
+    DEF: [{num:2,name:'Dani Carvajal',club:'Real Madrid',caps:36},{num:4,name:'Pau Cubarsí',club:'Barcelona',caps:8},{num:14,name:'Aymeric Laporte',club:'Al Nassr',caps:38},{num:18,name:'Marc Cucurella',club:'Chelsea',caps:25}],
+    MID: [{num:6,name:'Mikel Merino',club:'Arsenal',caps:28},{num:8,name:'Fabián Ruiz',club:'PSG',caps:32},{num:10,name:'Dani Olmo',club:'Barcelona',caps:40},{num:16,name:'Rodri',club:'Man City',caps:56}],
+    FWD: [{num:7,name:'Álvaro Morata',club:'AC Milan',caps:82},{num:9,name:'Mikel Oyarzabal',club:'Real Sociedad',caps:34},{num:17,name:'Nico Williams',club:'Athletic Bilbao',caps:22},{num:19,name:'Lamine Yamal',club:'Barcelona',caps:20}],
+  },
+  'Germany 🇩🇪': {
+    flag: '🇩🇪', group: 'E',
+    GK: [{num:1,name:'Manuel Neuer',club:'Bayern Munich',caps:120},{num:12,name:'Marc-André ter Stegen',club:'Barcelona',caps:42}],
+    DEF: [{num:2,name:'Antonio Rüdiger',club:'Real Madrid',caps:78},{num:4,name:'Jonathan Tah',club:'Bayer Leverkusen',caps:32},{num:3,name:'David Raum',club:'RB Leipzig',caps:22},{num:5,name:'Nico Schlotterbeck',club:'Dortmund',caps:14}],
+    MID: [{num:6,name:'Joshua Kimmich',club:'Bayern Munich',caps:92},{num:17,name:'Florian Wirtz',club:'Bayer Leverkusen',caps:24},{num:21,name:'İlkay Gündoğan',club:'Barcelona',caps:82},{num:8,name:'Toni Kroos',club:'Real Madrid',caps:114}],
+    FWD: [{num:9,name:'Niclas Füllkrug',club:'West Ham',caps:22},{num:7,name:'Kai Havertz',club:'Arsenal',caps:53},{num:10,name:'Jamal Musiala',club:'Bayern Munich',caps:30},{num:13,name:'Leroy Sané',club:'Bayern Munich',caps:66}],
+  },
+  'Netherlands 🇳🇱': {
+    flag: '🇳🇱', group: 'F',
+    GK: [{num:1,name:'Bart Verbruggen',club:'Brighton',caps:15},{num:23,name:'Mark Flekken',club:'Brentford',caps:8}],
+    DEF: [{num:4,name:'Virgil van Dijk',club:'Liverpool',caps:78},{num:3,name:'Matthijs de Ligt',club:'Man Utd',caps:52},{num:2,name:'Denzel Dumfries',club:'Inter Milan',caps:60},{num:5,name:'Nathan Aké',club:'Man City',caps:42}],
+    MID: [{num:6,name:'Frenkie de Jong',club:'Barcelona',caps:54},{num:14,name:'Tijjani Reijnders',club:'AC Milan',caps:16},{num:21,name:'Joey Veerman',club:'PSV',caps:10},{num:8,name:'Xavi Simons',club:'RB Leipzig',caps:22}],
+    FWD: [{num:10,name:'Memphis Depay',club:'Corinthians',caps:96},{num:11,name:'Cody Gakpo',club:'Liverpool',caps:28},{num:9,name:'Wout Weghorst',club:'Ajax',caps:36},{num:7,name:'Donyell Malen',club:'Dortmund',caps:30}],
+  },
+  'Belgium 🇧🇪': {
+    flag: '🇧🇪', group: 'G',
+    GK: [{num:1,name:'Koen Casteels',club:'Al Qadsiah',caps:10},{num:12,name:'Matz Sels',club:'Nottingham Forest',caps:6}],
+    DEF: [{num:15,name:'Thomas Meunier',club:'Trabzonspor',caps:58},{num:2,name:'Zeno Debast',club:'Sporting CP',caps:14},{num:5,name:'Jan Vertonghen',club:'Anderlecht',caps:156},{num:21,name:'Timothy Castagne',club:'Fulham',caps:38}],
+    MID: [{num:6,name:'Axel Witsel',club:'Atlético Madrid',caps:132},{num:8,name:'Youri Tielemans',club:'Aston Villa',caps:70},{num:7,name:'Kevin De Bruyne',club:'Man City',caps:105},{num:20,name:'Amadou Onana',club:'Aston Villa',caps:24}],
+    FWD: [{num:9,name:'Romelu Lukaku',club:'Napoli',caps:117},{num:11,name:'Jérémy Doku',club:'Man City',caps:22},{num:10,name:'Leandro Trossard',club:'Arsenal',caps:38},{num:17,name:'Dodi Lukebakio',club:'Sevilla',caps:12}],
+  },
+  'Croatia 🇭🇷': {
+    flag: '🇭🇷', group: 'L',
+    GK: [{num:1,name:'Dominik Livaković',club:'Fenerbahçe',caps:48},{num:23,name:'Ivica Ivušić',club:'Pafos',caps:14}],
+    DEF: [{num:22,name:'Josip Juranović',club:'Union Berlin',caps:28},{num:6,name:'Joško Gvardiol',club:'Man City',caps:32},{num:5,name:'Martin Erlić',club:'Sassuolo',caps:10},{num:19,name:'Borna Sosa',club:'Ajax',caps:16}],
+    MID: [{num:10,name:'Luka Modrić',club:'Real Madrid',caps:178},{num:8,name:'Mateo Kovačić',club:'Man City',caps:92},{num:11,name:'Marcelo Brozović',club:'Al Nassr',caps:86},{num:7,name:'Lovro Majer',club:'Wolfsburg',caps:24}],
+    FWD: [{num:9,name:'Andrej Kramarić',club:'Hoffenheim',caps:98},{num:20,name:'Petar Musa',club:'FC Dallas',caps:18},{num:14,name:'Nikola Vlašić',club:'Torino',caps:58},{num:16,name:'Ante Budimir',club:'Osasuna',caps:28}],
+  },
+  'Mexico 🇲🇽': {
+    flag: '🇲🇽', group: 'A',
+    GK: [{num:1,name:'Guillermo Ochoa',club:'AVS',caps:152},{num:13,name:'Luis Malagón',club:'América',caps:12}],
+    DEF: [{num:2,name:'Jorge Sánchez',club:'Cruz Azul',caps:42},{num:3,name:'César Montes',club:'Lokomotiv Moscow',caps:36},{num:15,name:'Héctor Moreno',club:'Monterrey',caps:130},{num:23,name:'Jesús Gallardo',club:'Monterrey',caps:62}],
+    MID: [{num:6,name:'Edson Álvarez',club:'West Ham',caps:82},{num:18,name:'Luis Chávez',club:'Dinamo Moscow',caps:30},{num:8,name:'Carlos Rodríguez',club:'Cruz Azul',caps:24},{num:16,name:'Héctor Herrera',club:'Houston Dynamo',caps:108}],
+    FWD: [{num:9,name:'Raúl Jiménez',club:'Fulham',caps:98},{num:22,name:'Hirving Lozano',club:'San Diego FC',caps:72},{num:14,name:'Santiago Giménez',club:'AC Milan',caps:38},{num:11,name:'Alexis Vega',club:'Toluca',caps:22}],
+  },
+  'USA 🇺🇸': {
+    flag: '🇺🇸', group: 'D',
+    GK: [{num:1,name:'Matt Turner',club:'New England',caps:48},{num:12,name:'Matt Freese',club:'NYCFC',caps:5}],
+    DEF: [{num:2,name:'Sergiño Dest',club:'PSV',caps:34},{num:3,name:'Chris Richards',club:'Crystal Palace',caps:22},{num:5,name:'Antonee Robinson',club:'Fulham',caps:42},{num:15,name:'Tim Ream',club:'Charlotte FC',caps:58}],
+    MID: [{num:4,name:'Tyler Adams',club:'Bournemouth',caps:42},{num:6,name:'Weston McKennie',club:'Juventus',caps:54},{num:8,name:'Yunus Musah',club:'AC Milan',caps:36},{num:10,name:'Christian Pulisic',club:'AC Milan',caps:78}],
+    FWD: [{num:9,name:'Ricardo Pepi',club:'PSV',caps:30},{num:16,name:'Gio Reyna',club:'Dortmund',caps:28},{num:11,name:'Brenden Aaronson',club:'Leeds Utd',caps:40},{num:13,name:'Tim Weah',club:'Juventus',caps:38}],
+  },
+  'Japan 🇯🇵': {
+    flag: '🇯🇵', group: 'F',
+    GK: [{num:1,name:'Zion Suzuki',club:'Parma',caps:12},{num:12,name:'Daiya Maekawa',club:'Kobe',caps:8}],
+    DEF: [{num:3,name:'Shogo Taniguchi',club:'Al Rayyan',caps:30},{num:4,name:'Ko Itakura',club:'Borussia M\'gladbach',caps:32},{num:5,name:'Yukinari Sugawara',club:'Southampton',caps:16},{num:2,name:'Hiroki Ito',club:'Bayern Munich',caps:14}],
+    MID: [{num:6,name:'Wataru Endo',club:'Liverpool',caps:62},{num:7,name:'Hidemasa Morita',club:'Sporting CP',caps:34},{num:17,name:'Ao Tanaka',club:'Leeds Utd',caps:22},{num:14,name:'Junya Ito',club:'Reims',caps:40}],
+    FWD: [{num:10,name:'Takumi Minamino',club:'Monaco',caps:48},{num:11,name:'Kaoru Mitoma',club:'Brighton',caps:28},{num:9,name:'Ayase Ueda',club:'Feyenoord',caps:24},{num:8,name:'Takefusa Kubo',club:'Real Sociedad',caps:36}],
+  },
+  'Morocco 🇲🇦': {
+    flag: '🇲🇦', group: 'C',
+    GK: [{num:1,name:'Yassine Bounou',club:'Al Hilal',caps:56},{num:12,name:'Munir El Kajoui',club:'Al-Wehda',caps:24}],
+    DEF: [{num:2,name:'Achraf Hakimi',club:'PSG',caps:80},{num:6,name:'Romain Saïss',club:'Al Shabab',caps:68},{num:5,name:'Nayef Aguerd',club:'Real Sociedad',caps:34},{num:3,name:'Noussair Mazraoui',club:'Man Utd',caps:28}],
+    MID: [{num:8,name:'Azzedine Ounahi',club:'Panathinaikos',caps:26},{num:4,name:'Sofyan Amrabat',club:'Fenerbahçe',caps:50},{num:10,name:'Hakim Ziyech',club:'Al Duhail',caps:62},{num:15,name:'Bilal El Khannouss',club:'Leicester City',caps:14}],
+    FWD: [{num:7,name:'Brahim Díaz',club:'Real Madrid',caps:12},{num:9,name:'Youssef En-Nesyri',club:'Fenerbahçe',caps:72},{num:17,name:'Sofiane Boufal',club:'Al Rayyan',caps:34},{num:19,name:'Ayoub El Kaabi',club:'Olympiakos',caps:18}],
+  },
+  'Uruguay 🇺🇾': {
+    flag: '🇺🇾', group: 'H',
+    GK: [{num:1,name:'Sergio Rochet',club:'Internacional',caps:18},{num:23,name:'Santiago Mele',club:'Unión La Calera',caps:4}],
+    DEF: [{num:3,name:'Ronald Araújo',club:'Barcelona',caps:24},{num:2,name:'José María Giménez',club:'Atlético Madrid',caps:76},{num:17,name:'Mathías Olivera',club:'Napoli',caps:26},{num:22,name:'Nahitan Nández',club:'Al Qadsiah',caps:52}],
+    MID: [{num:5,name:'Manuel Ugarte',club:'Man Utd',caps:22},{num:15,name:'Federico Valverde',club:'Real Madrid',caps:56},{num:6,name:'Rodrigo Bentancur',club:'Tottenham',caps:48},{num:10,name:'Giorgian de Arrascaeta',club:'Flamengo',caps:36}],
+    FWD: [{num:9,name:'Darwin Núñez',club:'Al Hilal',caps:38},{num:11,name:'Facundo Pellistri',club:'Panathinaikos',caps:28},{num:21,name:'Maxi Araújo',club:'Wolves',caps:10},{num:20,name:'Maximiliano Araujo',club:'Sporting CP',caps:8}],
+  },
+  'Colombia 🇨🇴': {
+    flag: '🇨🇴', group: 'K',
+    GK: [{num:1,name:'Camilo Vargas',club:'Atlas',caps:32},{num:12,name:'Álvaro Montero',club:'Vélez Sarsfield',caps:10}],
+    DEF: [{num:4,name:'Santiago Arias',club:'Bahia',caps:56},{num:23,name:'Davinson Sánchez',club:'Galatasaray',caps:64},{num:2,name:'Dávinson Sánchez',club:'Galatasaray',caps:64},{num:3,name:'Yerson Mosquera',club:'Wolves',caps:14},{num:17,name:'Johan Mojica',club:'Magdeburg',caps:42}],
+    MID: [{num:16,name:'Jefferson Lerma',club:'Crystal Palace',caps:52},{num:8,name:'Richard Ríos',club:'Palmeiras',caps:16},{num:10,name:'James Rodríguez',club:'León',caps:108},{num:20,name:'Juan Fernando Quintero',club:'Racing Club',caps:34}],
+    FWD: [{num:9,name:'Jhon Córdoba',club:'Krasnodar',caps:18},{num:11,name:'Jhon Arias',club:'Fluminense',caps:22},{num:7,name:'Luis Díaz',club:'Liverpool',caps:50},{num:19,name:'Rafael Santos Borré',club:'Internacional',caps:44}],
+  },
+  'Senegal 🇸🇳': {
+    flag: '🇸🇳', group: 'I',
+    GK: [{num:1,name:'Edouard Mendy',club:'Al Ahli',caps:32},{num:16,name:'Seny Dieng',club:'Middlesbrough',caps:10}],
+    DEF: [{num:3,name:'Kalidou Koulibaly',club:'Al Hilal',caps:78},{num:4,name:'Abdou Diallo',club:'Al Arabi',caps:36},{num:22,name:'Youssouf Sabaly',club:'Al Gharafa',caps:28},{num:12,name:'Fodé Ballo-Touré',club:'Fulham',caps:22}],
+    MID: [{num:6,name:'Nampalys Mendy',club:'Lens',caps:30},{num:8,name:'Cheikhou Kouyaté',club:'Damac',caps:94},{num:5,name:'Idrissa Gueye',club:'Everton',caps:116},{num:17,name:'Pape Matar Sarr',club:'Tottenham',caps:22}],
+    FWD: [{num:10,name:'Sadio Mané',club:'Al Nassr',caps:108},{num:9,name:'Boulaye Dia',club:'Lazio',caps:28},{num:19,name:'Nicolas Jackson',club:'Bayern Munich',caps:14},{num:18,name:'Ismaïla Sarr',club:'Crystal Palace',caps:48}],
+  },
+};
+
+const ALL_TEAMS = [
+  {n:'Mexico',f:'🇲🇽',c:'CONCACAF',g:'A'},{n:'Nam Phi',f:'🇿🇦',c:'CAF',g:'A'},{n:'Hàn Quốc',f:'🇰🇷',c:'AFC',g:'A'},
+  {n:'Canada',f:'🇨🇦',c:'CONCACAF',g:'B'},{n:'Qatar',f:'🇶🇦',c:'AFC',g:'B'},{n:'Thụy Sĩ',f:'🇨🇭',c:'UEFA',g:'B'},
+  {n:'Brazil',f:'🇧🇷',c:'CONMEBOL',g:'C'},{n:'Maroc',f:'🇲🇦',c:'CAF',g:'C'},{n:'Haiti',f:'🇭🇹',c:'CONCACAF',g:'C'},{n:'Scotland',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',c:'UEFA',g:'C'},
+  {n:'Mỹ',f:'🇺🇸',c:'CONCACAF',g:'D'},{n:'Paraguay',f:'🇵🇾',c:'CONMEBOL',g:'D'},{n:'Australia',f:'🇦🇺',c:'AFC',g:'D'},
+  {n:'Đức',f:'🇩🇪',c:'UEFA',g:'E'},{n:'Curacao',f:'🏝️',c:'CONCACAF',g:'E'},{n:"Côte d'Ivoire",f:'🇨🇮',c:'CAF',g:'E'},{n:'Ecuador',f:'🇪🇨',c:'CONMEBOL',g:'E'},
+  {n:'Hà Lan',f:'🇳🇱',c:'UEFA',g:'F'},{n:'Nhật Bản',f:'🇯🇵',c:'AFC',g:'F'},{n:'Tunisia',f:'🇹🇳',c:'CAF',g:'F'},
+  {n:'Bỉ',f:'🇧🇪',c:'UEFA',g:'G'},{n:'Ai Cập',f:'🇪🇬',c:'CAF',g:'G'},{n:'Iran',f:'🇮🇷',c:'AFC',g:'G'},{n:'New Zealand',f:'🇳🇿',c:'OFC',g:'G'},
+  {n:'Tây Ban Nha',f:'🇪🇸',c:'UEFA',g:'H'},{n:'Cape Verde',f:'🇨🇻',c:'CAF',g:'H'},{n:'Saudi Arabia',f:'🇸🇦',c:'AFC',g:'H'},{n:'Uruguay',f:'🇺🇾',c:'CONMEBOL',g:'H'},
+  {n:'Pháp',f:'🇫🇷',c:'UEFA',g:'I'},{n:'Senegal',f:'🇸🇳',c:'CAF',g:'I'},{n:'Na Uy',f:'🇳🇴',c:'UEFA',g:'I'},
+  {n:'Argentina',f:'🇦🇷',c:'CONMEBOL',g:'J'},{n:'Algeria',f:'🇩🇿',c:'CAF',g:'J'},{n:'Áo',f:'🇦🇹',c:'UEFA',g:'J'},{n:'Jordan',f:'🇯🇴',c:'AFC',g:'J'},
+  {n:'Bồ Đào Nha',f:'🇵🇹',c:'UEFA',g:'K'},{n:'Uzbekistan',f:'🇺🇿',c:'AFC',g:'K'},{n:'Colombia',f:'🇨🇴',c:'CONMEBOL',g:'K'},
+  {n:'Anh',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',c:'UEFA',g:'L'},{n:'Croatia',f:'🇭🇷',c:'UEFA',g:'L'},{n:'Ghana',f:'🇬🇭',c:'CAF',g:'L'},{n:'Panama',f:'🇵🇦',c:'CONCACAF',g:'L'},
+];
+
+// ═══ RENDER GROUPS ═══
+function renderGroups() {
+  const el = document.getElementById('groups-container');
+  el.innerHTML = Object.entries(GROUPS).map(([letter, data]) => `
+    <div class="group-card">
+      <div class="group-header">
+        <span class="group-name">BẢNG ${letter}</span>
+        <span style="font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px">${data.teams.length} ĐỘI</span>
+      </div>
+      <div class="group-body">
+        ${data.teams.map((t,i) => `
+          <div class="team-row">
+            <span class="team-flag">${t.f}</span>
+            <span class="team-name">${t.n}</span>
+            ${i===0?'<span class="team-badge">CHỦ LỰC</span>':''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══ RENDER SCHEDULE ═══
+function renderSchedule() {
+  const el = document.getElementById('schedule-container');
+  el.innerHTML = Object.entries(SCHEDULE).map(([group, matches]) => `
+    <div class="schedule-group">
+      <div class="sched-group-title">${group}</div>
+      <table class="match-table">
+        <thead>
+          <tr>
+            <th>Đội Nhà</th>
+            <th>Đội Khách</th>
+            <th>Ngày</th>
+            <th>Sân Vận Động</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${matches.map(m => `
+            <tr>
+              <td><span class="match-teams">${m.home}</span></td>
+              <td><span class="match-teams">${m.away}</span></td>
+              <td class="match-date">${m.date}</td>
+              <td class="match-venue">${m.venue}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `).join('');
+}
+
+// ═══ RENDER PLAYERS ═══
+function renderTeamSelector() {
+  const el = document.getElementById('team-selector');
+  el.innerHTML = Object.keys(SQUADS).map((t,i) => `
+    <button class="team-btn ${i===0?'active':''}" onclick="selectTeam('${t}', this)">${t}</button>
+  `).join('');
+  selectTeam(Object.keys(SQUADS)[0]);
+}
+
+function selectTeam(teamKey, btn) {
+  document.querySelectorAll('.team-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const squad = SQUADS[teamKey];
+  const positions = {GK:'Thủ Môn',DEF:'Hậu Vệ',MID:'Tiền Vệ',FWD:'Tiền Đạo'};
+  const slugKey = 'lineup_' + teamKey.replace(/[^a-zA-Z]/g,'').toLowerCase();
+  const firstWord = teamKey.split(' ')[0];
+  document.getElementById('squad-display').innerHTML = `
+    <div style="margin-bottom:1.5rem;padding:1rem;background:var(--dark2);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;gap:1rem">
+      <span style="font-size:3rem">${squad.flag}</span>
+      <div>
+        <div style="font-family:'Oswald',sans-serif;font-size:1.8rem;letter-spacing:0.5px">${teamKey}</div>
+        <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:.78rem;letter-spacing:0;color:var(--gold);text-transform:uppercase;font-weight:600">Bảng ${squad.group} — World Cup 2026</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.78rem;font-weight:700;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">Sơ đồ / đội hình dự kiến</div>
+      <div class="banner-img-slot" data-img-key="${slugKey}" onclick="uploadImg(this)" style="min-height:260px">
+        <div class="img-overlay"><div class="img-overlay-icon">⚽</div><div class="img-overlay-text">Tải ảnh đội hình ${firstWord}</div></div>
+        <button class="img-delete" onclick="event.stopPropagation();deleteImg(this.parentElement)">&times;</button>
+      </div>
+    </div>
+
+    ${Object.entries(positions).map(([pos, label]) => squad[pos] ? `
+      <div class="squad-section">
+        <div class="squad-title">${label}</div>
+        <div class="players-grid">
+          ${squad[pos].map(p => `
+            <div class="player-card">
+              <div class="player-num">${p.num}</div>
+              <div class="player-name">${p.name}</div>
+              <div class="player-pos">${label}</div>
+              <div class="player-club">🏟️ ${p.club}</div>
+              <div class="player-caps">⚽ ${p.caps} caps</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    ` : '').join('')}
+  `;
+
+  // Load lineup image for this team (from cache or fetch)
+  const slot = document.querySelector(`[data-img-key="${slugKey}"]`);
+  if (slot && window._fbImages && window._fbImages[slugKey]) {
+    applyImage(slot, window._fbImages[slugKey]);
+  } else if (slot) {
+    fetch(`${FB_URL}/worldcup2026/images/${slugKey}.json`)
+      .then(r => r.json()).then(d => { if (d) applyImage(slot, d); }).catch(()=>{});
+  }
+}
+
+// ═══ RENDER COUNTRIES ═══
+function renderCountries(filter = 'TẤT CẢ') {
+  const teams = filter === 'TẤT CẢ' ? ALL_TEAMS : ALL_TEAMS.filter(t => t.c === filter);
+  document.getElementById('countries-container').innerHTML = teams.map(t => `
+    <div class="country-card">
+      <div class="country-flag">${t.f}</div>
+      <div class="country-name">${t.n}</div>
+      <div class="country-conf">${t.c}</div>
+      <div class="country-group">BẢNG ${t.g}</div>
+    </div>
+  `).join('');
+}
+
+function renderConfFilter() {
+  const confs = ['TẤT CẢ','UEFA','CAF','AFC','CONMEBOL','CONCACAF','OFC'];
+  document.getElementById('conf-filter').innerHTML = confs.map((c,i) => `
+    <button class="filter-btn ${i===0?'active':''}" onclick="filterConf('${c}', this)">${c}</button>
+  `).join('');
+}
+
+function filterConf(conf, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCountries(conf);
+}
+
+// ═══ NAVIGATION ═══
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// ═══ FIREBASE IMAGE SYSTEM ═══
+const FB_URL = 'https://fefge-67bd3-default-rtdb.asia-southeast1.firebasedatabase.app';
+const FB_KEY = 'AIzaSyB7jCPMH4T2YJDQL4NbDw3WYTKosKLkE40';
+let activeSlot = null;
+
+function uploadImg(slotEl) {
+  activeSlot = slotEl;
+  document.getElementById('img-upload-input').click();
+}
+
+document.getElementById('img-upload-input').addEventListener('change', async function(e) {
+  const file = e.target.files[0];
+  if (!file || !activeSlot) return;
+  const key = activeSlot.dataset.imgKey;
+  activeSlot.classList.add('loading');
+
+  // Resize image to max 800px to stay under Firebase limits
+  const b64 = await resizeAndEncode(file, 800);
+  console.log(`Uploading ${key}, size: ${(b64.length/1024).toFixed(0)}KB`);
+
+  try {
+    const resp = await fetch(`${FB_URL}/worldcup2026/images/${key}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(b64)
+    });
+    const body = await resp.text();
+    if (resp.ok) {
+      applyImage(activeSlot, b64);
+      console.log(`✅ Saved ${key}`);
+    } else {
+      console.error('Firebase error:', resp.status, body);
+      alert(`Lỗi ${resp.status}: ${body}\n\nHãy vào Firebase Console → Realtime Database → Rules và đặt:\n{\n  "rules": {\n    ".read": true,\n    ".write": true\n  }\n}`);
+    }
+  } catch (err) {
+    console.error('Network error:', err);
+    alert('Lỗi kết nối: ' + err.message);
+  }
+  activeSlot.classList.remove('loading');
+  this.value = '';
+});
+
+async function deleteImg(slotEl) {
+  const key = slotEl.dataset.imgKey;
+  if (!confirm('Xóa ảnh này?')) return;
+  try {
+    await fetch(`${FB_URL}/worldcup2026/images/${key}.json`, { method: 'DELETE' });
+    const img = slotEl.querySelector('img');
+    if (img) img.remove();
+    slotEl.classList.remove('has-img');
+  } catch (err) {
+    alert('Lỗi: ' + err.message);
+  }
+}
+
+function applyImage(slotEl, b64) {
+  let img = slotEl.querySelector('img');
+  if (!img) {
+    img = document.createElement('img');
+    slotEl.insertBefore(img, slotEl.firstChild);
+  }
+  img.src = b64;
+  slotEl.classList.add('has-img');
+}
+
+function resizeAndEncode(file, maxSize) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let w = img.width, h = img.height;
+        if (w > maxSize || h > maxSize) {
+          if (w > h) { h = Math.round(h * maxSize / w); w = maxSize; }
+          else { w = Math.round(w * maxSize / h); h = maxSize; }
+        }
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', 0.75));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+async function loadAllImages() {
+  try {
+    const resp = await fetch(`${FB_URL}/worldcup2026/images.json`);
+    if (!resp.ok) {
+      console.warn('Firebase images load failed:', resp.status);
+      return;
+    }
+    const data = await resp.json();
+    if (!data) { console.log('No images in Firebase yet.'); return; }
+    window._fbImages = data;
+    console.log(`📷 Loaded ${Object.keys(data).length} images from Firebase`);
+    document.querySelectorAll('[data-img-key]').forEach(slot => {
+      const key = slot.dataset.imgKey;
+      if (data[key]) applyImage(slot, data[key]);
+    });
+  } catch (err) {
+    console.warn('Firebase images load failed:', err);
+  }
+}
+
+// ═══ INIT ═══
+renderGroups();
+renderSchedule();
+renderTeamSelector();
+renderConfFilter();
+renderCountries();
+loadAllImages();
+</script>
+</body>
+</html>
